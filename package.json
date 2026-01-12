@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ts-to-jsdoc": "^2.4.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/google-apps-script": "^2.0.8",
+    "rimraf": "^6.1.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "xcopy src\\*.js dist\\ /Y",
+    "clean-build": "rimraf \"dist/!(appsscript.json)\" && npm run build",
+    "push": "npm run build && clasp push"
+  }
+}
